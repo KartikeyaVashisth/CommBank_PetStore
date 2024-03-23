@@ -182,15 +182,15 @@ public class PetstoreTestCases {
 
 		//update the existing pet:
 		pet.setId(util.generateRandomId());
-		pet.setName("German Shepherd"); //Using the setter method of the User class to update the existing user.
+		pet.setName("German Shepherd");
 		pet.setStatus("sold");
 
-		//2. PUT - Update User
+		//2. PUT - Update Pet
 		RestAssured.given().log().all()
 		.baseUri(baseURI)
 		.contentType(ContentType.JSON)
 		.body(pet)
-		.when()
+		.when().log().all()
 		.put("/pet")
 		.then().log().all()
 		.assertThat()
