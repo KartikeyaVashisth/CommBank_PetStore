@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Petstore API Regression Suite" thread-count="1" verbose="4">
+	
+	
+	<listeners>
+		<listener
+			class-name="petstore.listeners.ExtentReportListener" />
+	</listeners>
+	
+	 <test name="PetStore API Test">
+		<parameter name="baseURI" value="https://petstore.swagger.io/v2" />
+
+		<classes>
+			<class name="petstore.tests.PetstoreTestCases" />
+						
+		</classes>
+	</test>
+
+</suite>
