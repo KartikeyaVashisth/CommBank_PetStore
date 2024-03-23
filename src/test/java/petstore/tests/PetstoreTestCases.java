@@ -309,7 +309,7 @@ public class PetstoreTestCases {
 		RestAssured.given().log().all()
 		.accept("application/json")
 		.contentType(ContentType.MULTIPART)
-		.multiPart("fileName", new File("D:\\Eclipse_Projects\\eclipse-APIAutomation\\petstore\\src\\test\\resources\\petImage.jpg"))
+		.multiPart("fileName", new File("./petImage.jpg"))
 		.multiPart("additionalMetadata", "test")
 		.when().log().all()
 		.post("/pet/"+petId+"/uploadImage")
